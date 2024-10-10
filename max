@@ -1,0 +1,60 @@
+      double a[] = {77.88, 7, 25, 16.88, 11, 699}; 
+          String[] b={"max","min","average","sum"};
+         JOptionPane.showMessageDialog(null,FindMax(a));
+    }
+
+    static double FindMax(double a[]) {
+         String[] b={"max","min","average","sum","mathpow"};
+         
+       double aver = JOptionPane.showOptionDialog(
+            null,"70, 7, 25, 16, 11, 699\n"                         
+           + "Please select an option:",   
+            "Choice Dialog",             
+            JOptionPane.DEFAULT_OPTION,    
+            JOptionPane.QUESTION_MESSAGE,   
+            null,                          
+            b,                       
+            b[0] 
+       );
+        if(aver==2){
+        double sum= a[0];
+       double average=0;
+        for (int i = 1; i < a.length; i++) {  
+            sum+=a[i];
+           average= sum/a.length;
+        }
+        return average;
+    }else if(aver==1){
+         double min= a[0];  
+        for (int i = 1; i < a.length; i++) {  
+            if (a[i] < min) {
+                min = a[i]; 
+            }
+        }
+        return min;
+    }else if(aver==0){
+         double max= a[0];  
+        for (int i = 1; i < a.length; i++) {  
+            if (a[i] > max) {
+                max = a[i]; 
+            }
+        }
+        return max;
+    }else if(aver==3){
+          double sum= a[0];
+        for (int i = 1; i < a.length; i++) { 
+            sum+=a[i];
+        }
+        return sum;
+    }else if(aver==4);{
+        double mathpow=0;
+        double base=Double.parseDouble(JOptionPane.showInputDialog("ENTER A BASE:"));
+        double exponent=Double.parseDouble(JOptionPane.showInputDialog("ENTER A EXPONENT:"));
+        JOptionPane.showMessageDialog(null,Math.pow(base, exponent));
+   return mathpow;
+    }
+}
+    }
+ 
+    
+    
